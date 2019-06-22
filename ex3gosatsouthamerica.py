@@ -85,10 +85,6 @@ if __name__ == "__main__":
    transferCheck()
 #   transferData()
 
-#python ex2.py -i "/home/saisree1/saisree1/" --ofolder "/home/saisree1/saisree1/capr/"
-#python ex2.py -i "/home/saisree1/saisree1/" --ofolder "/home/saisree1/saisree1/capr/"
-
-
 
 
 #python ex3gosatsouthamerica.py -i "/home/saisree1/GOSATnew/" --ofolder "/home/saisree1/GOSATnew/gosatsouthamerica/"
