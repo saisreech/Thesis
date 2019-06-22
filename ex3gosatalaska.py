@@ -37,26 +37,10 @@ def transferData(fileName):
 		#fpath = path.join(inputFolderPath,f)
 		nc = Dataset(f, mode='r')
 		nc.variables.keys()
-	        #warn_level=nc.variables['warn_level'][:]
-        	#if warn_level[:] > 13:
-                #time_var = nc.groups['Data'].groups['scanAttribute'].variables['time'][:]
-                #dtime = netCDF4.num2date(time_var[:],time_var.units)
+
 		latitude = nc.groups['Data'].groups['geolocation'].variables['latitude'][:]
 		longitude = nc.groups['Data'].groups['geolocation'].variables['longitude'][:]
-                #co2flux= nc.variables['xco2'][:]
-		xco2 = nc.groups['scanAttribute'].groups['referenceData'].variables['XCO2'][:]
-                #surfacepressure = nc.groups['referenceData'].variables['surfacepPressure'][:]
-                #windspeed = nc.groups['referenceData'].variables['surfaceWindSpeed'][:]
-		#print (nc.groups['scanAttribute'].groups['referenceData'])
-		#print nc.groups['referenceData']
-		#temperature = nc.groups['scanAttribute'].groups['referenceData'].variables['temperatureProfile'][:]
-                #pressure_weight = nc.variables['pressure_weight'][:]
-                #surfacepressure = nc.variables['psurf'][:]
-		#print (latitude)
-		#print (longitude)
-		#print (temperature)
-                #print  nc.groups['Retrieval'].variables['windspeed'][:]
-                #print nc.groups['Retrieval']
+                xco2 = nc.groups['scanAttribute'].groups['referenceData'].variables['XCO2'][:]
 		timecol = nc.groups['scanAttribute'].variables['time'][0]
 		df = pd.DataFrame({'timecol':str(timecol),'latitude':latitude,'longitude':longitude, 'xco2':xco2})
 		#df = pd.DataFrame({'latitude':latitude,'longitude':longitude,'xco2':XCO2,'surfacepressure':surfacePressure, 'windspeed':surfaceWindSpeed, 'temperature':temperatureProfile })
@@ -67,15 +51,7 @@ def transferData(fileName):
 		df = df[['timecol','latitude','longitude','xco2']]
 		df.set_index('timecol',inplace = True)
 		df.to_csv(outputFolderPath+fWithoutExt+ '.csv', sep=',')
-		#mdf =  df[['latitude','longitude','xco2']].mean().to_frame().T
-		#mdf['timecol'] = df['timecol'].iloc[0]
-                #print(mdf)
-                #print("I AM HERE--- END")
-		#df.set_index('timecol',inplace = True)
-		#df.to_csv(outputFolderPath+fWithoutExt+ '.csv', sep=',')
-
-
-		#df.to_csv(outputFolderPath+fWithoutExt+ '.csv', sep=',')
+		
 
 def getFiles():
         global fileArr;
@@ -107,8 +83,7 @@ if __name__ == "__main__":
    transferCheck()
 #   transferData()
 
-#python ex2.py -i "/home/saisree1/saisree1/" --ofolder "/home/saisree1/saisree1/capr/"
-#python ex2.py -i "/home/saisree1/saisree1/" --ofolder "/home/saisree1/saisree1/capr/"
+
 
 #python ex3gosatalaska.py -i "/home/saisree1/GOSATnew/" --ofolder "/home/saisree1/GOSATnew/gosatalaska/"
 
