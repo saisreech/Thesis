@@ -6,7 +6,7 @@
 #This code provides Reconstructed data,RMSE value and R2 using Compressive Sensing concept for DCT matrix for CO2 from  input variables such as latitude , longitude, dtime. Wavelets has been used.
 #Developed by Sai Sree Laya Chukkapalli on April 5th 2019 Friday, Time 8:45 AM   mail:saisree1@umbc.edu https://carta.umbc.edu/  https://www.csee.umbc.edu/
 # Requirements:  tensorflow, pandas, numpy, pywt, mathplotlib libaries
-#  Can be run in jupyter notebook changing the file name.             
+#  Can be run in jupyter notebook changing the file name extension.             
 # This code be run for daily data without making any changes for any satellite or station data.
 
 ###########################################################
